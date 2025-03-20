@@ -1,0 +1,30 @@
+<program>        ::= <expression> ( ";" <expression> )* 
+
+<expression>     ::= <term> ( ( "+" | "-" ) <term> )*
+<term>           ::= <factor> ( ( "*" | "/" ) <factor> )*
+<factor>         ::= <dice> | <number> | "(" <expression> ")" | "-" <factor>
+
+<dice>           ::= [ <count> "d" ] <die_faces> <modifier>*
+<count>          ::= <integer>
+<die_faces>      ::= <integer> | "%"
+
+<modifier>       ::= <keep_drop>
+                   | <explode>
+                   | <reroll>
+                   | <sort>
+                   | <advantage>
+                   | <fate>
+                   | <comment>
+                   | <arithmetic_mod>
+
+<keep_drop>      ::= ( "k" [hl]? | "d" [hl]? ) <integer>
+<explode>        ::= "!" [<>]? <integer>?
+<reroll>         ::= "r" [<>]? <integer>? [ "x" <integer> ]?
+<sort>           ::= "s" [ad]?
+<advantage>      ::= ( "adv" | "dis" )
+<fate>           ::= "f"
+<comment>        ::= "#" .* "\n"
+<arithmetic_mod> ::= ( "+" | "-" | "*" | "/" ) <integer>
+
+<integer>        ::= [0-9]+
+<string>         ::= [^#\n]+
