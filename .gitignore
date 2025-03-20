@@ -14,7 +14,7 @@
 # OS files
 .DS_Store
 
-# Build artifacts
+# Build files
 *.o
 *.d
 *.out
