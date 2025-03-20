@@ -1,0 +1,21 @@
+# Compiled files
+/bin/
+/build/
+
+# Generated parser/lexer files
+/src/fdnlex.cpp
+/src/fdnparse.cpp
+/src/include/fdnparse.h
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Build artifacts
+*.o
+*.d
+*.out
+*.exe
